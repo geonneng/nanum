@@ -1,26 +1,272 @@
 @import "tailwindcss";
 
+/* CSS Variables - Minimal Typography */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* 라이트 모드 - 양피지 */
+  --bg-color: #f5f1e8;
+  --text-color: #2b2419;
+  --text-secondary: #5a5047;
+  --text-tertiary: #8a847a;
+  --border-color: rgba(43, 36, 25, 0.12);
+}
+
+:root.dark {
+  /* 다크 모드 - 단순함 */
+  --bg-color: #0a0a0a;
+  --text-color: #f5f5f5;
+  --text-secondary: #a0a0a0;
+  --text-tertiary: #666666;
+  --border-color: rgba(245, 245, 245, 0.12);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-space-grotesk), "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* 기본 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow: hidden; /* 스크롤 비활성화 */
+  height: 100vh;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-space-grotesk), "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-weight: 300;
+  line-height: 1.8;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+/* 배경 - 양피지 격자무늬 */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 19px,
+      rgba(43, 36, 25, 0.04) 19px,
+      rgba(43, 36, 25, 0.04) 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 19px,
+      rgba(43, 36, 25, 0.04) 19px,
+      rgba(43, 36, 25, 0.04) 20px
+    );
+  opacity: 1;
+}
+
+/* 양피지 텍스처 */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 0.15;
+  mix-blend-mode: multiply;
+}
+
+/* 다크모드 배경 - 깨끗하게 */
+:root.dark body::before {
+  background: none;
+}
+
+:root.dark body::after {
+  background: none;
+}
+
+/* 타이포그래피 - 균형잡힌 대비 */
+h1, h2, h3 {
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text-color);
+  margin-bottom: 2.5rem;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  font-weight: 600;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 500;
+}
+
+p, li {
+  font-weight: 400;
+  line-height: 1.7;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 강조 스타일 - 텍스트만 */
+.highlight {
+  color: var(--text-color);
+  font-weight: 600;
+  display: inline;
+}
+
+.primary-text {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+/* 카드 스타일 제거 - 공간만 */
+.card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  transition: none;
+}
+
+/* 전환 애니메이션 - 고영향 cubic-bezier */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.98) translateY(-20px);
+  }
+}
+
+.slide-enter {
+  animation: slideIn 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.slide-exit {
+  animation: slideOut 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 별똥별 애니메이션 (다크모드) - 갑자기 반짝이며 떨어짐 */
+@keyframes shootingStar {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(400px) translateY(400px);
+    opacity: 0;
+  }
+}
+
+/* 별똥별 컨테이너 */
+.shooting-stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.shooting-star-animated {
+  position: absolute;
+  width: 2.5px;
+  height: 2.5px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 50%;
+  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.7);
+  animation: shootingStar 2.5s ease-out forwards;
+}
+
+.shooting-star-animated::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 100%);
+  transform-origin: 0% 50%;
+  transform: translate(0, -50%) rotate(-135deg);
+}
+
+/* 인용구 스타일 - 미니멀 */
+blockquote {
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  padding: 0 0 0 2rem;
+  border-left: 2px solid var(--text-color);
+  margin: 3rem 0;
+  background: transparent;
+  color: var(--text-secondary);
+  box-shadow: none;
+  position: relative;
+  line-height: 1.6;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+blockquote::before {
+  display: none;
+}
+
+/* 스크롤바 숨김 */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

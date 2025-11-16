@@ -1,36 +1,145 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 2025. 5학년 프로젝트 나눔
 
-## Getting Started
+**놀며, 살며, 알며 – 교실 속 배움을 체험으로 연결**
 
-First, run the development server:
+초등학교 5학년 교사가 1년간 진행한 '체험 중심 프로젝트 수업(우주, 역사)' 사례를 동료 교사 연수에서 공유하기 위한 모던한 인터랙티브 웹 프레젠테이션입니다.
+
+## ✨ 주요 특징
+
+- 🎨 **독창적 디자인**: "AI Slop" 탈피 - Pretendard 폰트의 극단적 대비(ExtraBlack 900 vs Light 300)
+- 🌓 **다크/라이트 모드**: 빈티지 교과서 테마 ↔️ 코딩 IDE 테마
+- 🖱️ **몰입형 네비게이션**: 클릭/키보드 기반 슬라이드 전환
+- 🎬 **역동적 애니메이션**: 스케일 + 페이드 전환 효과
+- 📱 **완벽한 반응형**: 모바일부터 데스크톱까지
+- 🎮 **인터랙티브 콘텐츠**: 4개의 실시간 iframe 임베드 (AI 체험, 역사 게임 등)
+
+## 🚀 시작하기
+
+### 개발 서버 실행
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 확인하세요.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 프로덕션 빌드
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## 🎯 주요 기능
 
-To learn more about Next.js, take a look at the following resources:
+### 1. 고정 헤더 (Sticky Header)
+- 항상 표시되는 네비게이션
+- 섹션 바로가기: 우주 프로젝트, 역사 프로젝트
+- 라이트/다크 모드 토글
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2. 슬라이드 네비게이션
+- **클릭**: 화면 좌측 50% = 이전, 우측 50% = 다음
+- **키보드**: 방향키 (←, →)
+- **인디케이터**: 하단 슬라이드 위치 표시
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 3. 27개 슬라이드 구성
+1. 표지
+2. 도입
+3. 목차
+4. 화두: '놂삶앎'
+5. '놂삶앎'의 재해석
+6. 체험 접근 전략
+7. Icebreaking: AI 체험 (iframe)
+8. Icebreaking 후기
+9. 사례 1: 우주 프로젝트
+10. 우주 프로젝트 - 도구
+11. 우주 프로젝트 - 놂삶앎 축제
+12. 성찰: '고착화'
+13. '고착화'의 영향
+14. 새로운 도전: 역사 프로젝트
+15. '체험' vs '추체험'
+16. 기존의 추체험 기법
+17. 새로운 시도 (Two-Track)
+18. 추체험 ① 고조선 (iframe)
+19. 추체험 ② 삼국/남북국시대 (iframe)
+20. 추체험 ③ 후삼국/고려
+21. 추체험 ④ 조선시대
+22. 디지털 추체험 게임
+23. '선택형 게임'의 이유 (iframe)
+24. 교사의 도구: AI 코딩 시연
+25. 1년의 수업을 돌아보며
+26. 마무리하며
+27. Q&A
 
-## Deploy on Vercel
+## 🛠 기술 스택
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+- **언어**: TypeScript
+- **스타일링**: Tailwind CSS 4
+- **폰트**: Pretendard Variable
+- **배포**: Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📁 프로젝트 구조
+
+```
+nanum/
+├── app/
+│   ├── globals.css      # 글로벌 스타일, CSS 변수, 테마
+│   ├── layout.tsx       # 루트 레이아웃, 폰트 설정
+│   └── page.tsx         # 27개 슬라이드 메인 페이지
+├── components/
+│   ├── Header.tsx       # 고정 헤더 (섹션 바로가기, 다크모드 토글)
+│   ├── ThemeToggle.tsx  # 라이트/다크 모드 전환
+│   ├── Slide.tsx        # 재사용 가능한 슬라이드 컴포넌트
+│   └── SlideContainer.tsx  # 슬라이드 전환 로직
+└── public/              # 정적 파일
+```
+
+## 🎨 디자인 시스템
+
+### 색상 테마
+
+**라이트 모드 (빈티지 교과서)**
+- 배경: `#fdfaf2` (바랜 종이)
+- 텍스트: `#2a2a2a` (짙은 잉크)
+- 주요 색상: `#007bff` (파란 볼펜)
+- 강조 색상: `#fffb8a` (노란 형광펜)
+
+**다크 모드 (코딩 IDE)**
+- 배경: `#282a36` (터미널)
+- 텍스트: `#f8f8f2` (코드)
+- 주요 색상: `#ff79c6` (핑크 키워드)
+- 강조 색상: `#50fa7b` (초록 주석)
+
+### 타이포그래피
+- **제목**: font-weight 900, letter-spacing -0.04em
+- **본문**: font-weight 300, line-height 1.8
+- **반응형**: clamp()를 사용한 유동적 폰트 크기
+
+## 📱 반응형 디자인
+
+- **모바일**: 세로 스크롤 대신 좌우 슬라이드
+- **태블릿**: 그리드 레이아웃 자동 조정
+- **데스크톱**: 최대 너비 제한으로 가독성 최적화
+
+## 🚢 배포
+
+### Vercel에 배포
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/nanum)
+
+```bash
+npm run build
+```
+
+## 👨‍🏫 제작자
+
+**조건형** - 평산초등학교 교사
+
+## 📄 라이선스
+
+이 프로젝트는 교육 목적으로 제작되었습니다.
+
+---
+
+Made with ❤️ for educators by educators
