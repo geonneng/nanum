@@ -268,7 +268,7 @@ export default function Home() {
             <div>
               <h2>사례 1: 우주 프로젝트</h2>
               <h3 style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>
-                미리캔버스와 메타버스로 우주 탐험
+                미리캔버스로 우주 탐험
               </h3>
             </div>
             
@@ -631,15 +631,22 @@ export default function Home() {
               
               <div style={{ 
                 width: '100%',
-                height: '200px',
-                border: '1px solid var(--border-color)',
+                height: '420px',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
-                color: 'var(--text-tertiary)',
-                fontSize: '0.9rem'
+                justifyContent: 'center'
               }}>
-                피구 활동 사진 영역
+                <img 
+                  src="/19페이지 사진.jpg" 
+                  alt="삼국시대 피구 활동"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain',
+                    filter: 'drop-shadow(0 4px 20px rgba(0, 0, 0, 0.1))',
+                    borderRadius: '0.25rem'
+                  }}
+                />
               </div>
             </div>
           </div>
@@ -748,8 +755,6 @@ export default function Home() {
                 }}>
                   <video 
                     controls
-                    preload="auto"
-                    playsInline
                     style={{
                       width: '100%',
                       height: '100%',
@@ -873,86 +878,122 @@ export default function Home() {
             <div>
               <h2>추체험 ④ 조선시대</h2>
               <h3 style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>
-                기로에 선 인물들의 '선택' 추체험
-              </h3>
-            </div>
-            
-            <div className="space-y-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div className="space-y-6">
-                  <p style={{ fontWeight: 500 }}>[핵심]</p>
-                  <p>디지털 추체험 게임: {'<'}다시 쓰는 조선왕조실록{'>'}</p>
-                  <div style={{ 
-                    width: '100%',
-                    height: '200px',
-                    border: '1px solid var(--border-color)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'var(--text-tertiary)',
-                    fontSize: '0.85rem'
-                  }}>
-                    조선왕조실록 이미지 영역
-                  </div>
-                </div>
-                
-                <div className="space-y-6">
-                  <p style={{ fontWeight: 500 }}>[융합]</p>
-                  <p>역사 뮤지컬 수업 (진행 중)</p>
-                  <div style={{ 
-                    width: '100%',
-                    height: '200px',
-                    border: '1px solid var(--border-color)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'var(--text-tertiary)',
-                    fontSize: '0.85rem'
-                  }}>
-                    뮤지컬 연습 영상 영역
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Slide>
-
-        {/* 페이지 25: 디지털 추체험 게임 */}
-        <Slide>
-          <div className="max-w-5xl mx-auto space-y-16">
-            <div>
-              <h2>디지털 추체험: {'<'}다시 쓰는 조선왕조실록{'>'}</h2>
-              <h3 style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>
-                교사 제작 '선택형 역사 게임(CYOA)'
+                에듀테크 · 예체능 연계 추체험
               </h3>
             </div>
             
             <div className="space-y-10">
-              <p style={{ fontWeight: 500 }}>게임 방식:</p>
-              
-              <div className="space-y-6">
-                <p>• 학생, 역사적 인물(이방원 등) 되기.</p>
-                <p>• 역사적 분기점에서 '선택지' 마주.</p>
-                <p>• 선택에 따른 실제/가상 결과 확인.</p>
+              <div className="space-y-4">
+                <p style={{ fontWeight: 500 }}>[핵심]</p>
+                <p>학급운영플랫폼 '상태창'으로 학습 상태를 공유하며 진행하는 에듀테크형 추체험</p>
               </div>
-            </div>
-            
-            <div style={{ 
-              width: '100%',
-              height: '300px',
-              border: '1px solid var(--border-color)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: 'var(--text-tertiary)',
-              fontSize: '0.9rem'
-            }}>
-              실제 게임 플레이 스크린샷 - 선택지가 보이는 장면 영역
+              
+              <div style={{ 
+                width: '100%',
+                height: '420px',
+                border: '1px solid var(--border-color)',
+                borderRadius: '0.75rem',
+                overflow: 'hidden'
+              }}>
+                <iframe
+                  src="https://statup.kr/student-login"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 'none' }}
+                  title="상태창 로그인"
+                />
+              </div>
             </div>
           </div>
         </Slide>
 
-        {/* 페이지 26: '선택형 게임'의 이유 */}
+        {/* 페이지 25: 추체험 ④ 조선시대 - 융합 */}
+        <Slide>
+          <div className="max-w-5xl mx-auto space-y-12">
+            <div>
+              <h2>추체험 ④ 조선시대 - 융합</h2>
+              <h3 style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>
+                예체능 기반 역사 뮤지컬 프로젝트
+              </h3>
+            </div>
+            
+            <div className="space-y-4">
+              <p style={{ fontWeight: 500 }}>[융합]</p>
+              <p>역사 뮤지컬 수업: 팀별 대본 작성 · 안무 제작 · 무대 연출</p>
+            </div>
+            
+            <div style={{ 
+              width: '100%',
+              height: '420px',
+              border: '1px solid var(--border-color)',
+              borderRadius: '0.75rem',
+              overflow: 'hidden'
+            }}>
+              <iframe
+                src="https://www.youtube.com/embed/5RuAqQmLyKU?feature=shared"
+                width="100%"
+                height="100%"
+                style={{ border: 'none' }}
+                title="역사 뮤지컬 수업 영상"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </Slide>
+
+        {/* 페이지 26: 디지털 추체험 게임 */}
+        <Slide>
+          <div className="max-w-6xl mx-auto">
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: '1.3fr 0.7fr', 
+              gap: '3rem',
+              alignItems: 'start'
+            }}>
+              {/* 왼쪽: 제목 및 내용 */}
+              <div className="space-y-12">
+                <div>
+                  <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.3rem)' }}>디지털 추체험: {'<'}다시 쓰는 조선왕조실록{'>'}</h2>
+                  <h3 style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>
+                    교사 제작 '선택형 역사 게임(CYOA)'
+                  </h3>
+                </div>
+                
+                <div className="space-y-10">
+                  <p style={{ fontWeight: 500 }}>게임 방식:</p>
+                  
+                  <div className="space-y-6">
+                    <p>• 학생, 역사적 인물(이방원 등) 되기.</p>
+                    <p>• 역사적 분기점에서 '선택지' 마주.</p>
+                    <p>• 선택에 따른 실제/가상 결과 확인.</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* 오른쪽: 모바일 형태 임베딩 */}
+              <div style={{ 
+                width: '100%',
+                maxWidth: '550px',
+                height: '70vh',
+                border: '1px solid var(--border-color)',
+                borderRadius: '0.5rem',
+                overflow: 'hidden',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)'
+              }}>
+                <iframe
+                  src="https://history-rewrite2.vercel.app/"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 'none' }}
+                  title="다시 쓰는 조선왕조실록 2"
+                />
+              </div>
+            </div>
+          </div>
+        </Slide>
+
+        {/* 페이지 27: '선택형 게임'의 이유 */}
         <Slide>
           <div className="max-w-6xl mx-auto space-y-12">
             <div>
@@ -996,101 +1037,252 @@ export default function Home() {
           </div>
         </Slide>
 
-        {/* 페이지 27: 교사의 도구: AI 코딩 시연 */}
+        {/* 페이지 28: 교사의 도구: AI 코딩 시연 */}
         <Slide>
-          <div className="max-w-5xl mx-auto space-y-16">
-            <h2>교사의 도구: AI 코딩 시연</h2>
-            
-            <div className="space-y-12">
-              <p style={{ fontWeight: 500 }}>프로세스:</p>
-              
-              <div className="space-y-8">
-                <div className="space-y-4">
-                  <p style={{ fontWeight: 500 }}>(교사)</p>
-                  <p style={{ marginBottom: 0 }}>역사 시나리오/분기점 설계</p>
-                </div>
+          <div className="max-w-6xl mx-auto">
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: '1.2fr 1fr', 
+              gap: '3rem',
+              alignItems: 'start'
+            }}>
+              {/* 왼쪽: 제목 및 내용 */}
+              <div className="space-y-12">
+                <h2>교사의 도구: AI 코딩 시연</h2>
                 
-                <div className="space-y-4">
-                  <p style={{ fontWeight: 500 }}>(AI)</p>
-                  <p style={{ marginBottom: 0 }}>시나리오 기반 코드 초안 생성</p>
-                </div>
-                
-                <div className="space-y-4">
-                  <p style={{ fontWeight: 500 }}>(교사+AI)</p>
-                  <p style={{ marginBottom: 0 }}>AI 코드 수정 및 발전 (게임 완성)</p>
+                <div className="space-y-8">
+                  <p style={{ fontWeight: 500, fontSize: '1.1rem' }}>프로세스</p>
+                  
+                  <div className="space-y-6" style={{ position: 'relative' }}>
+                    {/* 1단계 */}
+                    <div style={{
+                      padding: '1.5rem',
+                      border: '2px solid var(--border-color)',
+                      borderRadius: '0.75rem',
+                      backgroundColor: 'var(--bg-color)',
+                      position: 'relative'
+                    }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+                        <div style={{
+                          width: '2rem',
+                          height: '2rem',
+                          borderRadius: '50%',
+                          backgroundColor: 'var(--text-color)',
+                          color: 'var(--bg-color)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontWeight: 700,
+                          fontSize: '0.9rem'
+                        }}>1</div>
+                        <p style={{ fontWeight: 700, margin: 0, fontSize: '1.05rem' }}>교사</p>
+                      </div>
+                      <p style={{ margin: 0, lineHeight: '1.6', color: 'var(--text-secondary)' }}>
+                        역사 수업 내용을 바탕으로 게임 시나리오와 선택지 분기점 설계
+                      </p>
+                    </div>
+                    
+                    {/* 화살표 */}
+                    <div style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      height: '2rem',
+                      color: 'var(--text-secondary)',
+                      fontSize: '1.5rem'
+                    }}>↓</div>
+                    
+                    {/* 2단계 */}
+                    <div style={{
+                      padding: '1.5rem',
+                      border: '2px solid var(--border-color)',
+                      borderRadius: '0.75rem',
+                      backgroundColor: 'var(--bg-color)',
+                      position: 'relative'
+                    }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+                        <div style={{
+                          width: '2rem',
+                          height: '2rem',
+                          borderRadius: '50%',
+                          backgroundColor: 'var(--text-color)',
+                          color: 'var(--bg-color)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontWeight: 700,
+                          fontSize: '0.9rem'
+                        }}>2</div>
+                        <p style={{ fontWeight: 700, margin: 0, fontSize: '1.05rem' }}>AI</p>
+                      </div>
+                      <p style={{ margin: 0, lineHeight: '1.6', color: 'var(--text-secondary)' }}>
+                        교사가 설계한 시나리오를 바탕으로 게임 코드 초안 자동 생성
+                      </p>
+                    </div>
+                    
+                    {/* 화살표 */}
+                    <div style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      height: '2rem',
+                      color: 'var(--text-secondary)',
+                      fontSize: '1.5rem'
+                    }}>↓</div>
+                    
+                    {/* 3단계 */}
+                    <div style={{
+                      padding: '1.5rem',
+                      border: '2px solid var(--border-color)',
+                      borderRadius: '0.75rem',
+                      backgroundColor: 'var(--bg-color)',
+                      position: 'relative'
+                    }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+                        <div style={{
+                          width: '2rem',
+                          height: '2rem',
+                          borderRadius: '50%',
+                          backgroundColor: 'var(--text-color)',
+                          color: 'var(--bg-color)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontWeight: 700,
+                          fontSize: '0.9rem'
+                        }}>3</div>
+                        <p style={{ fontWeight: 700, margin: 0, fontSize: '1.05rem' }}>교사 + AI</p>
+                      </div>
+                      <p style={{ margin: 0, lineHeight: '1.6', color: 'var(--text-secondary)' }}>
+                        생성된 코드를 함께 검토하고 수정하여 완성도 높은 게임으로 발전
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
               
+              {/* 오른쪽: 이미지 */}
               <div style={{ 
                 width: '100%',
-                height: '250px',
-                border: '1px solid var(--border-color)',
+                height: '480px',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
-                color: 'var(--text-tertiary)',
-                fontSize: '0.9rem'
+                justifyContent: 'center'
               }}>
-                AI '커서' 툴 시연 영상 또는 스크린샷 영역
+                <img 
+                  src="/27페이지 사진.png" 
+                  alt="AI 코딩 시연"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain',
+                    filter: 'drop-shadow(0 4px 20px rgba(0, 0, 0, 0.1))',
+                    borderRadius: '0.25rem'
+                  }}
+                />
               </div>
             </div>
           </div>
         </Slide>
 
-        {/* 페이지 28: 1년의 수업을 돌아보며 */}
+        {/* 페이지 29: 바이브 코딩 실습 가이드 */}
         <Slide>
-          <div className="max-w-4xl mx-auto space-y-16">
-            <h2>1년의 수업을 돌아보며</h2>
-            
-            <div className="space-y-12">
-              <div className="space-y-4">
-                <p style={{ fontWeight: 500 }}>[학생]</p>
-                <p style={{ marginBottom: 0 }}>역사 몰입도 증가.</p>
-              </div>
-              
-              <div className="space-y-4">
-                <p style={{ fontWeight: 500 }}>[교사]</p>
-                <p style={{ marginBottom: 0 }}>
-                  '결과' 강박 탈피, '과정' 중심 수업 설계.
-                </p>
-              </div>
-            </div>
-            
-            <blockquote style={{ marginTop: '4rem' }}>
-              " '놂삶앎'은 '무엇을 했는가'가 아니라 '어떻게 배웠는가'의 문제. "
-            </blockquote>
-          </div>
-        </Slide>
-
-        {/* 페이지 29: 마무리하며 */}
-        <Slide>
-          <div className="h-full flex flex-col items-center justify-center max-w-4xl mx-auto space-y-16" style={{ transform: 'translateY(-2.5rem)' }}>
-            <div className="text-center space-y-12">
-              <h2>마무리하며</h2>
+          <div className="max-w-5xl mx-auto space-y-12">
+            <div className="space-y-4">
+              <h2>바이브 코딩 실습: 진진가 게임 웹앱</h2>
               <h3 style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>
-                선생님들의 '견문'을 기대하며
+                Gemini + Markdown 문서에서 웹페이지 만들기
               </h3>
             </div>
             
-            <div className="space-y-10 text-center">
-              <p>이 자리에 계신 다재다능한 선생님들의 역량.</p>
-              <p>선생님들의 멋진 다음 프로젝트 '견문(見聞)' 기대.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div style={{
+                border: '1px solid var(--border-color)',
+                borderRadius: '0.75rem',
+                padding: '1.75rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.85rem'
+              }}>
+                <p style={{ fontWeight: 600, letterSpacing: '-0.01em' }}>STEP 1 · 환경 준비</p>
+                <ul style={{ margin: 0, paddingLeft: '1rem', lineHeight: 1.6 }}>
+                  <li>바이브코딩 접속 → Gemini 도구 선택</li>
+                  <li>"제미나이가 쓴 마크다운 문서에서 웹페이지 만들기" 기능 실행</li>
+                  <li>모던 스타일 템플릿 선택 (다크/라이트 자동 대응)</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                border: '1px solid var(--border-color)',
+                borderRadius: '0.75rem',
+                padding: '1.75rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.85rem'
+              }}>
+                <p style={{ fontWeight: 600, letterSpacing: '-0.01em' }}>STEP 2 · 프롬프트 입력</p>
+                <p style={{ margin: 0, color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                  아래 PRD 프롬프트를 그대로 붙여넣고, "모던 UI" 조건을 강조
+                </p>
+                <pre style={{
+                  background: 'var(--card-bg)',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: '0.5rem',
+                  padding: '1rem',
+                  whiteSpace: 'pre-wrap',
+                  fontSize: '0.85rem',
+                  lineHeight: 1.4
+                }}>
+새학기 첫 시간에 교사 소개를 위한 진진가 게임 웹애플리케이션을 만들려고 해.
+이름: 조건형
+보기1: 지금 나이는 28살이다.(진짜)
+보기2: 지금 여자친구가 있다.(가짜)
+보기3: 5학년을 3년 연속 맡고 있다.(진짜)
+디자인: 모던
+                </pre>
+              </div>
+              
+              <div style={{
+                border: '1px solid var(--border-color)',
+                borderRadius: '0.75rem',
+                padding: '1.75rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.85rem'
+              }}>
+                <p style={{ fontWeight: 600, letterSpacing: '-0.01em' }}>STEP 3 · 생성 & 미세 조정</p>
+                <ul style={{ margin: 0, paddingLeft: '1rem', lineHeight: 1.6 }}>
+                  <li>제미나이가 생성한 PRD → 즉시 HTML/CSS/JS 변환</li>
+                  <li>정답/오답 토글 로직 확인, 색상 대비·폰트 수정</li>
+                  <li>게임 진행 안내 문구 및 버튼 레이블 국문화</li>
+                </ul>
+              </div>
+              
+              <div style={{
+                border: '1px solid var(--border-color)',
+                borderRadius: '0.75rem',
+                padding: '1.75rem',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.85rem'
+              }}>
+                <p style={{ fontWeight: 600, letterSpacing: '-0.01em' }}>STEP 4 · 배포 & 수업 적용</p>
+                <ul style={{ margin: 0, paddingLeft: '1rem', lineHeight: 1.6 }}>
+                  <li>바이브코딩 미리보기로 반 학생과 즉시 공유</li>
+                  <li>앱 링크를 학급 LMS / QR 코드에 탑재</li>
+                  <li>학생들이 진짜·가짜 선택 → 실시간 통계로 아이스브레이킹</li>
+                </ul>
+              </div>
             </div>
           </div>
         </Slide>
 
         {/* 페이지 30: Q&A */}
         <Slide>
-          <div className="h-full flex flex-col items-center justify-center text-center max-w-3xl mx-auto space-y-12" style={{ transform: 'translateY(-2.5rem)' }}>
+          <div className="h-full flex flex-col items-center justify-center text-center max-w-3xl mx-auto">
             <h1>감사합니다</h1>
-            
-            <div className="space-y-6">
-              <h2 style={{ marginBottom: 0 }}>질문과 코멘트</h2>
-              <p style={{ color: 'var(--text-tertiary)' }}>
-                builderjo.works@gmail.com
-              </p>
-        </div>
-    </div>
+            <h2 style={{ marginBottom: 0, fontWeight: 400 }}>Q&amp;A</h2>
+          </div>
         </Slide>
       </SlideContainer>
     </>

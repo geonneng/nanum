@@ -23,11 +23,12 @@ export default function Header({ onNavigateToSpace, onNavigateToHistory, onNavig
         {/* 좌측: 제목 */}
         <div className="flex-shrink-0">
           <h1 style={{ 
-            fontSize: 'clamp(0.7rem, 1.2vw, 0.85rem)',
+            fontSize: 'clamp(0.8rem, 1.3vw, 0.95rem)',
             letterSpacing: '-0.01em',
             color: 'var(--text-color)',
             marginBottom: 0,
-            fontWeight: 500
+            fontWeight: 500,
+            paddingLeft: '0.5rem'
           }}>
             <span className="hidden sm:inline">2025. 5학년 프로젝트 나눔</span>
             <span className="sm:hidden">프로젝트 나눔</span>
